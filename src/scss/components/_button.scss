@@ -1,0 +1,77 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    font-size: $default-font-size;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+    color: $white;
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+  }
+
+  &--white {
+    background-color: $white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &--pink {
+    background-color: $color-dark-pink;
+    color: $white;
+
+    &::after {
+      background-color: $color-dark-pink;
+    }
+  }
+
+  &::after {
+    content: ''; /* must specify the content property */
+    display: inline-block;
+    height: 100%; /* 100% of the parent element which is & in this case */
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* this puts this button behind the original one */
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.4s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

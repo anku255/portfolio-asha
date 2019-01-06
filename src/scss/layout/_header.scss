@@ -1,0 +1,291 @@
+//
+// Header styling
+//
+
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+
+.header {
+  @include media_query($tablet-breakpoint) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include media_query($mobile-breakpoint) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    animation: none;
+  }
+  animation: headerSlideDown 0.5s 0.1s;
+  animation-fill-mode: both;
+  box-sizing: border-box;
+  width: 100%;
+  height: $header-height;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border-top: 4px solid #{$color-dark-pink};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  will-change: transform;
+
+  &__logo-name {
+    @include media_query($mobile-breakpoint) {
+      display: inline-block;
+    }
+    display: flex;
+    justify-content: center;
+
+    .diamond {
+      transition: transform 0.4s;
+      width: 24px;
+      height: 24px;
+      background-color: $color-dark-pink;
+      transform: rotate(45deg);
+      transform-origin: 50% 50%;
+    }
+
+    &:hover {
+      .diamond {
+        transform: rotate(135deg);
+      }
+
+      .name {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .header__sub {
+    @include media_query($tablet-breakpoint) {
+      justify-content: center;
+    }
+  }
+
+  .navigation-lg {
+    @include media_query($tablet-breakpoint) {
+      display: none;
+    }
+
+    display: inline-block;
+    user-select: none;
+    height: $header-height;
+
+    .nav-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin: 0;
+        font-weight: 600;
+
+        a {
+          display: inline-block;
+          height: $header-height;
+          line-height: $header-height;
+          font-size: 1.8rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $color-dark-pink;
+          letter-spacing: 1px;
+          padding: 0 1.5rem;
+
+          &:hover {
+            background: $color-dark-pink;
+            color: $white;
+          }
+
+        }
+        .nav-icon {
+          font-size: 2rem;
+          transform: translateY(3px);
+        }
+      }
+    }
+  }
+
+  &__sub {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+
+  &__main-logo {
+    @include media_query($tablet-breakpoint) {
+      transform: translateX(-24px);
+    }
+
+    font-family: 'Marck Script', cursive;
+    color: $color-dark-pink;
+    height: $header-height;
+    line-height: $header-height;
+    font-size: 3.8rem;
+    margin-left: 4rem;
+  }
+
+}
+
+
+// Navigation for smaller screen
+
+
+.navigation-sm {
+  @include media_query($tablet-breakpoint) {
+    display: block;
+  }
+
+  display: none;
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    background-color: $white;
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    top: 0.8rem;
+    right: 4rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($black, .3);
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__background {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 1.3rem;
+    right: 4.5rem;
+    background-image: radial-gradient(#ff9bc2, $color-dark-pink);
+    z-index: 1000;
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1) ;
+  }
+
+  &__nav {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    opacity: 0;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__item{
+    margin: 1rem;
+
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1.5rem 2rem;
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $white 50%);
+      background-size: 220%;
+      transition: all 0.4s;
+
+      span {
+        margin-right: 1rem;
+        display: inline-block;
+        transform: translateY(3px);
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-dark-pink;
+      transform: translateX(1rem);
+    }
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  //ICON
+  &__icon {
+    position: relative;
+    margin-top: 2.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 2.2rem;
+      height: 2px;
+      background-color: #333;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
