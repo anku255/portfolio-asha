@@ -37,11 +37,11 @@
   }
 
   &--pink {
-    background-color: $color-dark-pink;
+    background-color: $color-primary-dark;
     color: $white;
 
     &::after {
-      background-color: $color-dark-pink;
+      background-color: $color-primary-dark;
     }
   }
 
