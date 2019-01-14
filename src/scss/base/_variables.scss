@@ -1,4 +1,16 @@
 //
+// CSS Variables
+//
+
+// CSS Variables
+:root {
+  --color-primary-dark: #e5075d;
+  --color-primary-light: #ff9bc2;
+  --color-grey-dark: #777777;
+  --color-grey-light: #e6e6e6;
+}
+
+//
 // Sass Variables
 //
 
@@ -9,10 +21,10 @@ $off-black: #212121;
 $black: #303030;
 $card-border-color: #e1e4e6;
 $site-background-color: #ececec;
-$color-primary-dark: #e5075d;
-$color-primary-light: #ff9bc2;
-$color-dark-grey: #777777;
-$color-light-grey: lighten(grey, 40%);
+$color-primary-dark: var(--color-primary-dark);
+$color-primary-light: var(--color-primary-light);
+$color-grey-dark:  var(--color-grey-dark);
+$color-grey-light:  var(--color-grey-light);
 $primary-accent: #e5075d;
 
 // Fonts
