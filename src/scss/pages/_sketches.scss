@@ -1,0 +1,41 @@
+.sketches-container {
+  margin-top: $header-height + 10px;
+  text-align: center;
+}
+
+.showcase {
+  margin-left: 2rem;
+  margin-right: 3.5rem;
+
+  @include media_query(950px) {
+    margin-left: 1.5rem;
+    margin-right: 2.5rem;
+  }
+
+  @include media_query($small-mobile-breakpoint) {
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+  }
+
+  &__item {
+    width: 33.333333%;
+    padding-left: 1.5rem;
+    padding-bottom: 0.5rem;
+    transition: all 0.25s;
+
+    &:hover {
+      transform: scale(0.95) translateY(-0.5rem);
+      filter: brightness(0.8);
+    }
+
+    @include media_query(950px) {
+      width: 50%;
+      padding-left: 1rem;
+    }
+
+    @include media_query($small-mobile-breakpoint) {
+      width: 100%;
+      padding-left: 0.5rem;
+    }
+  }
+}
