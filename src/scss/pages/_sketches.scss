@@ -37,5 +37,34 @@
       width: 100%;
       padding-left: 0.5rem;
     }
+
+    &:hover .showcase__title {
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    opacity: 0;
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $white;
+    position: absolute;
+    bottom: -2rem;
+    right: 1rem;
+    width: 90%;
+    transform: skewY(-5deg);
+    word-wrap: break-word;
+    transition: all 0.25s;
+  }
+
+  &__title-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-image: linear-gradient(to right,
+    rgba(#777, 0.85),
+    rgba(#222, 0.85));
   }
 }

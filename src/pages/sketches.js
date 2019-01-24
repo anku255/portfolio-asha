@@ -26,6 +26,9 @@ class Sketches extends Component {
             {images.map(({ node: work }) => (
               <div key={work.id} className="showcase__item">
                 <Img fluid={work.photo.fluid} />
+                <h4 className="showcase__title">
+                  <span className="showcase__title-span">{work.title}</span>
+                </h4>
               </div>
             ))}
           </Masonry>
