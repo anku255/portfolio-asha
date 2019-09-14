@@ -26,12 +26,14 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const images = result.data.allContentfulImage.edges
-        images.forEach(image => {
+        images.forEach((image, index) => {
           createPage({
             path: `/image/${image.node.slug}/`,
             component: Image,
             context: {
               slug: image.node.slug,
+              prev: index === 0 ? null : images[index - 1].node,
+              next: index === images.length - 1 ? null : images[index + 1].node,
             },
           })
         })
