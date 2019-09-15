@@ -12,6 +12,7 @@ module.exports = {
       options: {
         spaceId: process.env.SPACE_ID,
         accessToken: process.env.ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
     `gatsby-plugin-react-helmet`,

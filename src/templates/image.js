@@ -9,7 +9,7 @@ import cx from 'classnames'
 class ImageTemplate extends React.Component {
   render() {
     const { photo } = this.props.data.contentfulImage
-    const { prev, next } = this.props.pageContext
+    const { prev, next, backgroundColor } = this.props.pageContext
     if (!photo) {
       return <h1>Loading</h1>
     }
@@ -17,7 +17,12 @@ class ImageTemplate extends React.Component {
     return (
       <Layout>
         <div className="image">
-          <div className="image__container">
+          <div
+            className="image__container"
+            style={{
+              background: backgroundColor,
+            }}
+          >
             <figure>
               <Img
                 className="image__picture"
@@ -33,14 +38,14 @@ class ImageTemplate extends React.Component {
                 disabled: prev === null,
               })}
             >
-              <Link to={`/image/${prev && prev.slug}`}>⬅ Prev</Link>
+              <Link to={`/image/${prev}`}>⬅ Prev</Link>
             </button>
             <button
               className={cx('image__buttons-next', {
                 disabled: next === null,
               })}
             >
-              <Link to={`/image/${next && next.slug}`}>Next ➡</Link>
+              <Link to={`/image/${next}`}>Next ➡</Link>
             </button>
           </div>
         </div>
