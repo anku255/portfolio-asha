@@ -5,7 +5,7 @@ export const theme = {
 
 export const updateTheme = theme => {
   // update theme only in browser env
-  if (document) {
+  if (typeof window !== `undefined`) {
     const html = document.getElementsByTagName('html')[0]
     const { primaryDark, primaryLight } = theme
     html.style.setProperty('--color-primary-dark', primaryDark)
