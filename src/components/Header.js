@@ -72,7 +72,11 @@ const NavigationSmall = () => (
   </div>
 )
 
-const MainLogo = () => <div className="header__main-logo">Asha Sharma</div>
+const MainLogo = () => (
+  <div className="header__main-logo">
+    Asha <span className="header__main-logo__lastname">Sharma</span>
+  </div>
+)
 
 const Header = () => (
   <>
