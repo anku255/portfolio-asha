@@ -10,10 +10,6 @@ class ImageTemplate extends React.Component {
   render() {
     const { title, photo } = this.props.data.contentfulImage
     const { prev, next, backgroundColor } = this.props.pageContext
-    if (!photo) {
-      return <h1>Loading</h1>
-    }
-
     return (
       <Layout>
         <Helmet>
