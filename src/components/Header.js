@@ -78,7 +78,9 @@ const NavigationSmall = () => (
 
 const MainLogo = () => (
   <div className="header__main-logo">
-    Asha <span className="header__main-logo__lastname">Sharma</span>
+    <Link to="/">
+      Asha <span className="header__main-logo__lastname">Sharma</span>
+    </Link>
   </div>
 )
 

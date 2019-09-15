@@ -137,6 +137,15 @@
     line-height: $header-height;
     font-size: 3.8rem;
     margin-left: 4rem;
+
+    a {
+      text-decoration: none;
+      color: currentColor;
+
+      &:hover {
+        color: currentColor;
+      }
+    }
   }
 }
 
