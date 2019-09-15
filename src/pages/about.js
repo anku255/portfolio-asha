@@ -1,10 +1,14 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import HeroImage from '../images/svg/artist-img.svg'
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>About Me | Asha Sharma</title>
+      </Helmet>
       <section className="about-page section__hero">
         <div className="columns">
           <div className="column hero-img">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
@@ -20,6 +21,9 @@ class Sketches extends Component {
 
     return (
       <Layout>
+        <Helmet>
+          <title>Sketches | Asha Sharma</title>
+        </Helmet>
         <div className="sketches-container">
           <h1 className="heading-primary">Sketches</h1>
           <Masonry className="showcase">

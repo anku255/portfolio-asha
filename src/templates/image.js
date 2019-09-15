@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet' // TODO: Use helmet to change site title (See demo)
+import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -8,7 +8,7 @@ import cx from 'classnames'
 
 class ImageTemplate extends React.Component {
   render() {
-    const { photo } = this.props.data.contentfulImage
+    const { title, photo } = this.props.data.contentfulImage
     const { prev, next, backgroundColor } = this.props.pageContext
     if (!photo) {
       return <h1>Loading</h1>
@@ -16,6 +16,9 @@ class ImageTemplate extends React.Component {
 
     return (
       <Layout>
+        <Helmet>
+          <title>{title} | Asha Sharma</title>
+        </Helmet>
         <div className="image">
           <div
             className="image__container"
