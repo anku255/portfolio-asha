@@ -44,7 +44,7 @@ export default Sketches
 
 export const pageQuery = graphql`
   query {
-    images: allContentfulImage {
+    images: allContentfulImage(sort: { fields: [createdAt], order: DESC }) {
       totalCount
       edges {
         node {
