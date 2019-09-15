@@ -1,0 +1,32 @@
+//
+// About page styling
+//
+
+// Hero Section
+
+.about-page.section__hero {
+  margin-top: 10rem;
+  padding: 1rem 5rem;
+  height: 80vh;
+
+  .hero-img {
+    text-align: center;
+
+    &-svg {
+      width: 90%;
+      height: 70%;
+    }
+  }
+
+  .hero-text {
+    margin-top: 1rem;
+    text-align: left;
+    position: relative;
+
+    p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+  }
+}

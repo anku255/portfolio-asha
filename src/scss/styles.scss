@@ -3,8 +3,8 @@
 //
 
 // Bulma
-@import "bulma/sass/utilities/_all.sass";
-@import "bulma/sass/grid/columns.sass";
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/grid/columns.sass';
 
 // Base Sass Files
 @import 'base/setup';
@@ -25,4 +25,5 @@
 @import 'pages/index';
 @import 'pages/sketches';
 @import 'pages/image';
+@import 'pages/about';
 @import 'pages/404';
