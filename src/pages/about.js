@@ -15,8 +15,7 @@ const IndexPage = () => {
               Hi! I am Asha Sharma. I am a sketch artist by passion and software
               enginner by profession. You can find me on{' '}
               <a href="https://www.instagram.com/beinganartist/">Instagram</a>,{' '}
-              <a href="https://www.facebook.com/beinganartist/">Facebook</a>,
-              and{' '}
+              <a href="https://www.facebook.com/">Facebook</a>, and{' '}
               <a href="https://www.youtube.com/channel/UCeDg588ylKWdGuIF-n94-7Q">
                 Youtube
               </a>
