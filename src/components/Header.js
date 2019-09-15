@@ -12,7 +12,11 @@ const ListItemSm = props => (
 
 const ListItemLg = props => (
   <li className="navigation-sm__item">
-    <Link className="navigation-sm__link" to={props.to}>
+    <Link
+      className="navigation-sm__link"
+      activeClassName="active"
+      to={props.to}
+    >
       {props.children}
     </Link>
   </li>
