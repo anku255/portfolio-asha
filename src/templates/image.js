@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import Link from 'gatsby-link'
 import cx from 'classnames'
 
+import { invertColor } from '../utils'
+
 class ImageTemplate extends React.Component {
   render() {
     const { title, photo } = this.props.data.contentfulImage
@@ -28,7 +30,9 @@ class ImageTemplate extends React.Component {
                 imgStyle={{ objectFit: 'contain' }}
                 fluid={photo.fluid}
               />
-              <figcaption>{this.props.data.contentfulImage.title}</figcaption>
+              <figcaption style={{ color: invertColor(backgroundColor) }}>
+                {this.props.data.contentfulImage.title}
+              </figcaption>
             </figure>
           </div>
           <div className="image__buttons">
