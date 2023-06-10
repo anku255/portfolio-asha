@@ -8,7 +8,7 @@
     "bulma": "^0.7.2",
     "classnames": "^2.2.6",
     "colorthief": "^2.3.0",
-    "gatsby": "^2.0.76",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.0.0-rc.4",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-nprogress": "^2.1.6",
